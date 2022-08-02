@@ -23,7 +23,7 @@ const MyRequestList = (props: Props) => {
                     return (
                         <Link href={`/items/${item.id}`} key={item.id}>
                             <S.ItemBox>
-                                <div>{limitStringLength(item.title!)}</div>
+                                <div>{limitStringLength(item.title!, 14)}</div>
                                 <div>{item.town}</div>
                                 <div>{item.date}</div>
                                 <div>

@@ -72,7 +72,7 @@ const ChatLists = (props: Props) => {
                             <S.ChatBox data-id={a.id} onClick={handleOnClick}>
                                 <S.TitleNTown>
                                     <S.Title>
-                                        의뢰: {limitStringLength(a.title!)}{' '}
+                                        의뢰: {limitStringLength(a.title!, 14)}{' '}
                                     </S.Title>
                                     <S.Town>{a.town}</S.Town>
                                 </S.TitleNTown>

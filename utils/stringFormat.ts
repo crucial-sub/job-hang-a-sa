@@ -1,5 +1,10 @@
-export const limitStringLength = (str: string) => {
-    let sliceStr;
-    str.length > 14 ? (sliceStr = `${str.slice(0, 14)}...`) : (sliceStr = str);
-    return sliceStr;
+export const limitStringLength = (
+    targetString: string,
+    limitNumber: number,
+) => {
+    let sliceString;
+    targetString.length > limitNumber
+        ? (sliceString = `${targetString.slice(0, limitNumber)}...`)
+        : (sliceString = targetString);
+    return sliceString;
 };

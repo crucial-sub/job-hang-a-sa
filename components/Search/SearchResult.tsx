@@ -30,7 +30,7 @@ const SearchResult = (props: Props) => {
                 searchResult.map((item) => (
                     <Link key={item.id} href={`/items/${item.id}`}>
                         <S.PostBox>
-                            <div>{limitStringLength(item.title!)}</div>
+                            <div>{limitStringLength(item.title!, 16)}</div>
                             <div>{item.town}</div>
                             <div>{item.date}</div>
                             <div>
