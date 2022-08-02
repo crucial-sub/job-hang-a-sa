@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { RootState } from 'store';
 import Link from 'next/link';
 import * as S from './styles';
+import { limitStringLength } from 'utils/stringFormat';
 
 type Props = {};
 
@@ -22,7 +23,7 @@ const MyRequestList = (props: Props) => {
                     return (
                         <Link href={`/items/${item.id}`} key={item.id}>
                             <S.ItemBox>
-                                <div>{item.title?.slice(0, 14)}</div>
+                                <div>{limitStringLength(item.title!)}</div>
                                 <div>{item.town}</div>
                                 <div>{item.date}</div>
                                 <div>

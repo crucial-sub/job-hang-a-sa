@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { ItemTypes, RootState } from 'store';
+import { limitStringLength } from 'utils/stringFormat';
 import * as S from './styles';
 
 type Props = {};
@@ -29,7 +30,7 @@ const SearchResult = (props: Props) => {
                 searchResult.map((item) => (
                     <Link key={item.id} href={`/items/${item.id}`}>
                         <S.PostBox>
-                            <div>{item.title?.slice(0, 16)}</div>
+                            <div>{limitStringLength(item.title!)}</div>
                             <div>{item.town}</div>
                             <div>{item.date}</div>
                             <div>

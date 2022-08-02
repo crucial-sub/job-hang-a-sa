@@ -13,6 +13,7 @@ import { useSelector } from 'react-redux';
 import { chatListsAction, docIdAction, RootState } from 'store';
 import { useDispatch } from 'react-redux';
 import * as S from './styles';
+import { limitStringLength } from 'utils/stringFormat';
 
 type Props = {};
 
@@ -71,7 +72,7 @@ const ChatLists = (props: Props) => {
                             <S.ChatBox data-id={a.id} onClick={handleOnClick}>
                                 <S.TitleNTown>
                                     <S.Title>
-                                        의뢰: {a.title?.slice(0, 14)}{' '}
+                                        의뢰: {limitStringLength(a.title!)}{' '}
                                     </S.Title>
                                     <S.Town>{a.town}</S.Town>
                                 </S.TitleNTown>

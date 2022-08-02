@@ -2,6 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from 'store';
+import { limitStringLength } from 'utils/stringFormat';
 import * as S from './styles';
 
 type Props = {};
@@ -21,7 +22,7 @@ const MyJobHangList = (props: Props) => {
                 jobHangList.map((item) => (
                     <Link href={`/items/${item.id}`} key={item.id}>
                         <S.ItemBox>
-                            <div>{item.title?.slice(0, 16)}</div>
+                            <div>{limitStringLength(item.title!)}</div>
                             <div>{item.town}</div>
                             <div>{item.date}</div>
                             <div>

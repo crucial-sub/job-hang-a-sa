@@ -14,6 +14,7 @@ import { useSelector } from 'react-redux';
 import { docIdAction, filterAction, itemListAction, RootState } from 'store';
 import { getMonthDayTime } from 'utils/dateFormat';
 import { getTownWithOutDist } from 'utils/fetcher';
+import { limitStringLength } from 'utils/stringFormat';
 import * as S from './styles';
 
 type Props = {};
@@ -109,7 +110,7 @@ const ItemList = (props: Props) => {
                 filterInfo.filteredItem?.map((item) => (
                     <Link key={item.id} href={`/items/${item.id}`}>
                         <S.PostBox>
-                            <div>{item.title?.slice(0, 16)}</div>
+                            <div>{limitStringLength(item.title!)}</div>
                             <div>{item.town}</div>
                             <div>{item.date}</div>
                             <div>
